@@ -14,6 +14,7 @@ namespace Rec_Tracker.Controllers
             _context = context;
         }
 
+        // Search Functionality
         public IActionResult Index(string searchString)
         {
             var records = _context.Record_details.AsEnumerable();  
@@ -38,12 +39,12 @@ namespace Rec_Tracker.Controllers
         }
 
 
-
+        // Renders Create View
         public IActionResult Create()
         {
             return View();
         }
-
+        // Handles the POST request to create a new record.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("File_Number,File_Name,Organisation,File_Type,File_Description,Shelf_Number,Row_number,Position")] Rec_Details rec)
@@ -79,7 +80,7 @@ namespace Rec_Tracker.Controllers
             return View(rec);
         }
 
-
+        // Loads Edit View
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null) return NotFound();
@@ -89,7 +90,7 @@ namespace Rec_Tracker.Controllers
 
             return View(rec);
         }
-
+        // Handles the POST request to update an existing record.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("File_Number,File_Name,Organisation,File_Type,File_Description,Shelf_Number,Row_number,Position")] Rec_Details rec)
@@ -130,7 +131,7 @@ namespace Rec_Tracker.Controllers
             TempData["ErrorMessage"] = "Failed to update file. Please check the inputs.";
             return View(rec);
         }
-
+        // Loads the Delete confirmation view for a specific record.
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null) return NotFound();
@@ -142,7 +143,7 @@ namespace Rec_Tracker.Controllers
 
             return View(rec);
         }
-
+        // Handles the confirmed deletion of a record.
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
