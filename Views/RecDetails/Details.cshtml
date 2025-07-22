@@ -1,0 +1,40 @@
+@model Rec_Tracker.Models.Rec_Details
+
+@{
+    ViewData["Title"] = "Record Details";
+}
+
+<h2>Record Details</h2>
+
+<div>
+    <dl class="row">
+        <dt class="col-sm-2">File Number</dt>
+        <dd class="col-sm-10">@Model.File_Number</dd>
+
+        <dt class="col-sm-2">File Name</dt>
+        <dd class="col-sm-10">@Model.File_Name</dd>
+
+        <dt class="col-sm-2">Organisation</dt>
+        <dd class="col-sm-10">@Model.Organisation</dd>
+
+        <dt class="col-sm-2">File Type</dt>
+        <dd class="col-sm-10">@Model.File_Type</dd>
+
+        <dt class="col-sm-2">Description</dt>
+        <dd class="col-sm-10">@Model.File_Description</dd>
+
+        <dt class="col-sm-2">Shelf</dt>
+        <dd class="col-sm-10">@Model.Shelf_Number</dd>
+
+        <dt class="col-sm-2">Row</dt>
+        <dd class="col-sm-10">@Model.Row_number</dd>
+
+        <dt class="col-sm-2">Position</dt>
+        <dd class="col-sm-10">@Model.Position</dd>
+    </dl>
+</div>
+
+<a asp-action="Edit" asp-route-file_number="@Model.File_Number" class="btn btn-warning">Edit</a>
+<a asp-action="Delete" asp-route-file_number="@Model.File_Number" class="btn btn-danger">Delete</a>
+
+<a asp-action="Index" class="btn btn-secondary">Back</a>

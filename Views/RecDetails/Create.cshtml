@@ -1,0 +1,88 @@
+@model Rec_Tracker.Models.Rec_Details
+
+@{
+    ViewData["Title"] = "Create New Record";
+}
+
+<h2 class="mb-4 mt-3">Create New Record</h2>
+
+ 
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        @TempData["SuccessMessage"]
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+}
+@if (TempData["ErrorMessage"] != null)
+{
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        @TempData["ErrorMessage"]
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+}
+
+<form asp-action="Create" method="post" class="p-4 border rounded shadow-sm bg-light">
+    <div class="row mb-3">
+        <div class="col-md-6">
+            <div class="form-group mb-3">
+                <label asp-for="File_Number" class="form-label"></label>
+                <input asp-for="File_Number" class="form-control" type="number" min="1" />
+                <span asp-validation-for="File_Number" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="File_Name" class="form-label"></label>
+                <input asp-for="File_Name" class="form-control" />
+                <span asp-validation-for="File_Name" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="Organisation" class="form-label"></label>
+                <input asp-for="Organisation" class="form-control" />
+                <span asp-validation-for="Organisation" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="File_Type" class="form-label"></label>
+                <input asp-for="File_Type" class="form-control" />
+                <span asp-validation-for="File_Type" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="form-group mb-3">
+                <label asp-for="File_Description" class="form-label"></label>
+                <textarea asp-for="File_Description" class="form-control" rows="4"></textarea>
+                <span asp-validation-for="File_Description" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="Shelf_Number" class="form-label"></label>
+                <input asp-for="Shelf_Number" class="form-control" />
+                <span asp-validation-for="Shelf_Number" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="Row_number" class="form-label"></label>
+                <input asp-for="Row_number" class="form-control" />
+                <span asp-validation-for="Row_number" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-4">
+                <label asp-for="Position" class="form-label"></label>
+                <input asp-for="Position" class="form-control" type="number" min="1" />
+                <span asp-validation-for="Position" class="text-danger"></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="d-flex gap-3">
+        <button type="submit" class="btn btn-success px-4">Save</button>
+        <a asp-action="Index" class="btn btn-secondary px-4">Cancel</a>
+    </div>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

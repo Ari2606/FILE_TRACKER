@@ -1,0 +1,36 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>net9.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.17" />
+      <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="7.0.17">
+        <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        <PrivateAssets>all</PrivateAssets>
+      </PackageReference>
+      <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="7.0.0" />
+      <PackageReference Include="Swashbuckle.AspNetCore" Version="9.0.3" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <_ContentIncludedByDefault Remove="Views\RecDetails\Create.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\RecDetails\Delete.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\RecDetails\Details.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\RecDetails\Edit.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\RecDetails\Index.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Home\RecDetails\Create.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Home\RecDetails\Delete.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Home\RecDetails\Details.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Home\RecDetails\Edit.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Home\RecDetails\Index.cshtml" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <AdditionalFiles Include="Views\RecDetails\Index.cshtml" />
+    </ItemGroup>
+
+</Project>
