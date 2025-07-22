@@ -16,7 +16,7 @@ namespace Rec_Tracker.Controllers
 
         public IActionResult Index(string searchString)
         {
-            var records = _context.Record_details.AsEnumerable(); // fetch all first
+            var records = _context.Record_details.AsEnumerable();  
 
             if (!string.IsNullOrEmpty(searchString))
             {
@@ -102,7 +102,7 @@ namespace Rec_Tracker.Controllers
                     r.Shelf_Number == rec.Shelf_Number &&
                     r.Row_number == rec.Row_number &&
                     r.Position == rec.Position &&
-                    r.File_Number != rec.File_Number); // ignore current file
+                    r.File_Number != rec.File_Number);  
 
                 if (duplicateLocation)
                 {
