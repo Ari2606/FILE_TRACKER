@@ -1,6 +1,6 @@
 # FILE_TRACKER 📂
 
-A simple **CRUD web application** built using **ASP.NET Core** with **Razor Pages**, designed to help administrative staff efficiently **track, organize, and manage client file records**.
+A simple **CRUD web application** built using **ASP.NET Core** with **Razor Views**, designed to help administrative staff efficiently **track, organize, and manage client file records**.
 
 ---
 
@@ -16,7 +16,7 @@ A simple **CRUD web application** built using **ASP.NET Core** with **Razor Page
 
 ## Tech Stack
 
-- ASP.NET Core (Razor Pages)
+- ASP.NET Core 
 - Entity Framework Core
 - MySQL (or SQL Server)
 
